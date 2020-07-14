@@ -1,0 +1,875 @@
+@import '~bulma/bulma.sass';
+
+$main: #F7B733;
+$font-color: #4a4a4a;
+$logo-font: 'Cinzel', serif;
+$slogan: 'Dosis', sans-serif;
+$article-font: BlinkMacSystemFont;
+$article-text-font: Roboto,sans-serif;
+// #e1b382
+
+html{
+  background: #f0f4f8;
+}
+a{
+  color: $main;
+}
+
+.home-container{
+  background-image: url('./images/background.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.register-container{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  align-items: center;
+  margin-top: -40px;
+}
+
+.radio{
+  display: inline-block;
+  
+}
+
+.register-forms-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #dbdbdb;
+  padding: 20px 20px;
+  border-radius: 4px;
+  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
+}
+
+.register-forms-container:hover{
+  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.25);
+}
+
+.register-forms{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category{
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.category label{
+  margin-right: 20px;
+}
+
+.register-type{
+  margin-left: 40px;
+}
+
+.register-forms-span{
+  display: inline-block;
+ margin: 30px 0 0 10px;
+}
+
+.register-section{
+  margin-top: 10px;
+  padding: 0 20px;
+}
+
+.register-section.add-training .button{
+  margin: 40px 0 0 40%;
+  display: inline-block;
+}
+
+.register-section .input{
+  width: 360px;
+}
+
+.field{
+  margin-right: 40px;
+}
+
+.input-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.select,.is-multiple{
+  margin-top: 5px;
+}
+
+.profile-choices-container{
+  display: flex;
+  justify-content: space-evenly;
+ 
+}
+
+.index{
+  margin-bottom: 30px;
+}
+
+.profile-choices{
+  width: 200px;
+  height: 200px;
+  // border: 2px solid black;
+  padding: 20px;
+  margin: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.small-profile-choices{
+  width: 150px;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 1px solid #f0f4f8;
+}
+
+.small-profile-choices:hover{
+  color: $main;
+  border-bottom: 1px solid $main;
+}
+
+.card-header-title{
+  display: inline-block;
+}
+
+.card{
+  padding: 10px;
+}
+
+.done{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+
+.done-booking{
+  padding-bottom: 20px;
+  width: 620px;
+  border-bottom: 3px solid $main;
+}
+
+.done .subtitle{
+  text-align: center;
+}
+
+.done-subtitle-wrap{
+  margin-top: -140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selected-menu-choice{
+  color: $main;
+}
+
+.add-portfolio{
+  position: absolute;
+  top: 0px;
+  left: 48%;
+  animation: heartbeat 4s infinite;
+  z-index: 1000;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( 0.9 );
+  }
+  50%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( 0.9 );
+  }
+  100%
+  {
+    transform: scale( 1 );
+  }
+}
+
+.portfolio-container{
+  padding: 0 140px;
+}
+
+.article-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding: 0 40px;
+}
+
+.card-article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 600px;
+  margin-bottom: 80px;
+  color: $font-color;
+
+}
+
+
+.article-title{
+  padding: 0 10px;
+  font-family: $article-font;
+  margin: 10px 0;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+}
+
+.article-text a {
+  color: $font-color;
+}
+
+.article-author{
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 0 0 57px;
+}
+
+.article-author a{
+  color: $main;
+}
+
+.article-border{
+  border-bottom: 2px solid $font-color;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.image-article{
+  width: 400px;
+  height: 300px;
+}
+
+.subtitle-article{
+  font-family: $article-font;
+  padding: 10px 25px;
+  height: 170px;
+  overflow: hidden;
+}
+
+.article-text{
+  width: 400px
+}
+
+.article-image-container{
+  width: 100vw;
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -20px;
+}
+
+.single-article-container{
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-article-title{
+  width: 1000px;
+  margin-top: 20px;
+}
+
+.single-article-text{
+  width: 960px;
+  font-family: $article-text-font;
+  font-size: 20px;
+  background: white;
+  padding: 30px 80px;
+}
+
+.single-article-author{
+
+}
+
+
+
+// .profile-image{
+//   width: 120px;
+//   height: 120px;
+// }
+
+.profile-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
+  border: 2px solid $main;
+}
+
+.profile-header{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  text-align: left;
+}
+
+.navbar-image{
+  border-radius: 50%;
+}
+
+.navbar-item{
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.logout{
+  position: fixed;
+  bottom: 17px;
+  right: 17px;
+  cursor: pointer;
+}
+
+.logo{
+  font-family: 'Cinzel', serif;
+  font-size: 90px;
+
+}
+
+.logo-navbar{
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+}
+
+.navbar{
+  border-bottom: 1px solid $main;
+}
+
+.greeting{
+  color: $main;
+}
+
+.greeting-public{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.greeting-public img{
+  width: 40px;
+  height: 40px;
+}
+
+.user-type{
+  display: flex;
+  align-items: center;
+}
+
+.message{
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.chat-profile-form{
+  position: fixed;
+  bottom: 10px;
+  right: 5%;
+  z-index: 5;
+  border: 2px solid $main;
+  background: white;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.chat-profile-form form{
+  display: flex;
+  width: 300px;
+}
+
+.close-message{
+  margin-left: 140px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-header-chat{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 -12px 0 ;
+  align-items: center;
+  text-align: left;
+}
+
+.sign-container{
+  display: flex;
+  justify-content: left;
+  align-items: end;
+  margin: 18% 0px 0 20px;
+}
+
+.sign-card{
+  width: 400px;
+}
+
+.logo-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin-left: 20px;
+}
+
+.slogan{
+  font-size: 33px;
+  font-family: $slogan;
+}
+
+.logo-navbar-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-navbar{
+  margin: 30px 60px 0 0;
+}
+
+.home-navbar-item{
+  color: white;
+  font-family: $slogan;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.register-title{
+  color: $main;
+}
+
+.register-button{
+  background: $main;
+  color: white;
+  margin-top: -20px;
+}
+
+.loading-image-register{
+  display: inline-block;
+  margin-left: 40%;
+  margin-top: -20px;
+}
+
+.profile-header-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.public-profile-container{
+
+}
+
+.m-scene{
+  padding-top: 20px;
+}
+
+.add-training{
+  margin-top: 90px;
+  border: 2px solid $main;
+  padding: 40px;
+}
+
+.add-form-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-top: -50px;
+}
+
+.add-form-container form{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 40px; 
+  border: 2px solid $main;
+}
+
+.add-form-section .textarea, .button{
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.upload-portfolio img, video{
+  width: 80px;
+  height: 80px;
+  margin-left: 30px;
+  // display: flex;
+
+}
+
+.upload-portfolio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.loading-image{
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.add-article-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.add-article-container form{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 40px; 
+}
+
+.done-button{
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.done-button .button{
+  margin: 0 20px;
+  width: 230px;
+}
+
+// Index page show big photos
+
+.show-big-image{
+  display: flex;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-image-card{
+  position: fixed;
+  display: flex;
+  margin-top: 10px;
+}
+
+.big-image{
+  width: 570px;
+  height: 570px;
+  display: inline-block;
+}
+
+.big-image-side{
+  height: 570px;
+  width: 330px;
+  background: white;
+  margin-right: 20px;
+}
+
+.close{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.close-training{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-top: 80px;
+}
+
+.index-portfolio{
+  cursor: pointer;
+}
+
+.profile-header-index{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 -12px 0 ;
+  align-items: center;
+  text-align: left;
+}
+
+.profile-header-index a {
+  color: $font-color;
+  font-weight: 700;
+}
+
+.profile-image-index{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px 10px 0 0;
+  border: 2px solid $main;
+}
+
+.big-image-description{
+  padding: 10px 20px;
+}
+
+.show-comments{
+  padding: 0 12px;
+  // height: 393px;
+  // overflow: auto;
+}
+
+.description-and-comments{
+  height: 450px;
+  overflow: auto;
+}
+
+.single-comment{
+  margin: 10px 0;
+}
+
+.comment-add-container{
+  display: flex;
+}
+
+.comment-button{
+  cursor: pointer;
+  font-family: $article-text-font;
+  font-size: 14px;
+  color: $font-color;
+  padding: 4px;
+  border: none;
+  padding: 0 10px;
+}
+
+.profile-header-comment{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+}
+
+.profile-header-comment a{
+  color: $font-color;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.profile-image-comment{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px 10px 0 0;
+  border: 1px solid $main;
+}
+
+.hr-comment{
+  margin-bottom: 0
+}
+
+.index-video{
+  width: 250px;
+  height: 250px;
+}
+
+.upload-portfolio-register{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.upload-portfolio-register img{
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.show-big-training{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.training-description{
+  padding: 20px;
+}
+
+.big-training-card{
+  position: fixed;
+  display: flex;
+}
+
+.big-training-side{
+  height: 650px;
+  width: 870px;
+  background: white;
+  margin-right: 20px;
+  padding: 8px 20px;
+  margin-top: 80px;
+}
+
+
+.profile-header-training{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-bottom: -8px;
+}
+
+.training-title{
+  margin-top: -30px
+}
+
+.training-item{
+  cursor: pointer;
+}
+
+hr{
+  margin: 1rem 0;
+}
+
+// Chats
+.chat-profile-container{
+  display: flex;
+  
+  margin-left: 40px;
+}
+
+.profile-header-chat-page{
+  display: flex;
+  justify-content: center;
+  margin: 5px 15px 5px 0px ;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid $font-color;
+  width: 150px;
+  cursor: pointer;
+  padding-bottom: 15px;
+}
+
+.profile-header-chat-page a{
+  color: $font-color;
+}
+.chat-profile-side{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-right: 1px solid $font-color;
+  margin-right: 60px;
+  height: 85vh;
+  overflow: auto;
+}
+
+.messages-section{
+  width: 70%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-messages{
+  border-bottom: 1px solid $font-color;
+  padding-bottom: 15px;
+  margin-top: 10px;
+}
+
+.messages-section form{
+  display: flex;
+  width: 400px;
+}
+
+.messages-form-container{
+  display: flex;
+  justify-content: center;
+}
+
+.chat-history{
+  width: 93%;
+  height: 400px;
+  overflow: auto;
+  transform: rotate(180deg);
+}
+
+.one-message-container{
+  transform: rotate(180deg);
+  margin: 15px;
+  border-radius: 4%;
+}
+
+.one-message-container-other{
+  transform: rotate(180deg);
+  margin: 15px;
+  border-radius: 4%;
+}
+
+.one-message{
+  display: inline-block;
+  background: $main;
+  text-align: center;
+  padding: 10px 18px;
+  max-width: 50%;
+  font-family: $article-text-font;
+}
+
+.one-message-other{
+  display: inline-block;
+  background: $font-color;
+  text-align: center;
+  padding: 10px 18px;
+  max-width: 50%;
+  font-family: $article-text-font;
+  color: white;
+}
+
+.chat-history-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-messages{
+  margin-top: 100px;
+}
