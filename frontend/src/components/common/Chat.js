@@ -90,19 +90,12 @@ class Chat extends React.Component {
 
   }
 
-  getUnique(arr, comp) {
-
-    // store the comparison  values in array
-    const unique = arr.map(e => e[comp])
-
-    // store the indexes of the unique objects
-      .map((e, i, final) => final.indexOf(e) === i && i)
-
-    // eliminate the false indexes & return unique objects
-      .filter((e) => arr[e]).map(e => arr[e])
-
-    return unique
+  uniq(a, param){
+    return a.filter(function(item, pos, array){
+        return array.map(function(mapItem){ return mapItem[param]; }).indexOf(item[param]) === pos;
+    })
   }
+
 
 
 
@@ -117,8 +110,10 @@ class Chat extends React.Component {
             const notCurrentUser = chat.users.filter(user => {
               return user.id !== this.state.user.id
             })
+            const newArray = this.uniq(notCurrentUser, 'id');
+            // const uniqueObjects = [...new Map(arr.map(item => [item.id, item])).values()]
           
-            return notCurrentUser.map(userForChat => (
+            return newArray.map(userForChat => (
               <div onClick={() => {
                 this.getMessages(userForChat.id)
               }}

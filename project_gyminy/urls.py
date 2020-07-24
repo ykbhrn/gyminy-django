@@ -27,6 +27,7 @@ urlpatterns = [
     path('api/types/', include('user_type.urls')),
     path('api/comments/', include('comments.urls')),
     path('api/chat/', include('chat.urls')),
+    path('api/likes/', include('likes.urls')),
     path('api/', include('jwt_auth.urls')),
     re_path(r'^.*$', index) # <-- this come last using re path.
 ]

@@ -86,3 +86,7 @@ export const postChat = (formData, id) => {
 export const getChat = (id) => {
   return axios.get(`/api/chat/${id}`, withHeaders())
 }
+
+export const getAllUsers = () => {
+  return axios.get('/api/users/')
+}

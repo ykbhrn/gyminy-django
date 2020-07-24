@@ -171,7 +171,7 @@ a{
 }
 
 .add-portfolio{
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 48%;
   animation: heartbeat 4s infinite;
@@ -286,7 +286,8 @@ a{
 }
 
 .single-article-container{
-  margin: 20px 0;
+  padding-top: 60px;
+  // margin: 20px 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -333,6 +334,60 @@ a{
   text-align: left;
 }
 
+//Navbar
+.navbar{
+  border-bottom: 1px solid $main;
+  position: fixed;
+  width: 100%;
+  height: 53px;
+  opacity: 0.9;
+}
+
+.logo-search{
+  display: flex;
+}
+
+.search{
+  position: relative;
+  margin: auto 140px;
+  img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  input{
+    width: 230px;
+  }
+}
+
+.search-results{
+  position: absolute;
+  width: 230px;
+  max-height: 300px;
+  overflow: auto;
+  padding: 20px 0px;
+  background: white;
+  border: 1px solid $main;
+}
+
+.no-results{
+  position: absolute;
+  text-align: center;
+  padding: 5px;
+  background: white;
+  width: 230px;
+  border: 1px solid $main;
+}
+
+.search-profile{
+  cursor: pointer;
+  padding: 0px 20px;
+  margin-bottom: 10px;
+  :hover{
+    opacity: 0.6;
+  }
+}
+
 .navbar-image{
   border-radius: 50%;
 }
@@ -359,10 +414,6 @@ a{
 .logo-navbar{
   font-family: 'Cinzel', serif;
   font-size: 30px;
-}
-
-.navbar{
-  border-bottom: 1px solid $main;
 }
 
 .greeting{
@@ -490,11 +541,11 @@ a{
 }
 
 .public-profile-container{
-
+  padding-top: 53px;
 }
 
 .m-scene{
-  padding-top: 20px;
+  padding-top: 73px;
 }
 
 .add-training{
@@ -509,7 +560,7 @@ a{
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin-top: -50px;
+  
 }
 
 .add-form-container form{
@@ -552,14 +603,14 @@ a{
   flex-direction: column;
   align-items: center;
   height: 100%;
-  margin-top: 20px;
+  padding-top: 73px;
 }
 
 .add-article-container form{
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 40px; 
+  padding: 0px 40px 40px 40px; 
 }
 
 .done-button{
@@ -773,8 +824,7 @@ hr{
 // Chats
 .chat-profile-container{
   display: flex;
-  
-  margin-left: 40px;
+  padding: 53px 0px 0px 40px;
 }
 
 .profile-header-chat-page{

@@ -42,7 +42,6 @@ class Images extends React.Component{
         ...this.state.formData, text: ''
       }
       this.setState({ formData: textData })
-      console.log(response)
       
     } catch (err) {
       console.log('response: ', err.response.data)
@@ -54,9 +53,7 @@ class Images extends React.Component{
     this.setState({ displayNewComments: false })
   }
 
-  render ( ) {   
-    console.log(this.state)
-    
+  render ( ) {       
     const { title, url, id, showBigPortfolio, username, userId, description, handleBigPortfolio, displayPhotoUrl, hideBig, profileUrl,
       displayTitle, displayUserId, displayUsername, displayProfileUrl, displayDescription, comments,
       displayComments, displayPortfolioId } = this.props
