@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { postComment, getSingleImage } from '../../lib/api'
+import { postComment, getSingleImage, giveLike } from '../../lib/api'
 
 class Images extends React.Component{
 
   state = {
     formData: {
       text: '',
+      image: ''
+    },
+    likeData: {
       image: ''
     },
     comments: [],
@@ -21,6 +24,16 @@ class Images extends React.Component{
     } catch (error) {
       console.log(error)
       // this.props.history.push('/notfound')
+    }
+  }
+
+  async likeImage(id, likes) {
+    try {
+      const formData = { image: id }
+      const res = await giveLike(formData)
+      console.log(likes)
+    } catch(err) {
+      console.log(err)
     }
   }
 
@@ -54,14 +67,14 @@ class Images extends React.Component{
   }
 
   render ( ) {       
-    const { title, url, id, showBigPortfolio, username, userId, description, handleBigPortfolio, displayPhotoUrl, hideBig, profileUrl,
+    const { title, url, id, showBigPortfolio, username, userId, description, likes, handleBigPortfolio, displayPhotoUrl, hideBig, profileUrl,
       displayTitle, displayUserId, displayUsername, displayProfileUrl, displayDescription, comments,
-      displayComments, displayPortfolioId } = this.props
+      displayComments, displayPortfolioId, displayLikes } = this.props
     return (
       <>
-        <div 
+        <div
           onClick={() => {
-            handleBigPortfolio(url, title, userId, username, profileUrl, description, comments, id)
+            handleBigPortfolio(url, title, userId, username, profileUrl, description, comments, id, likes)
           }}
           className = "index-portfolio column is-one-quarter-desktop is-one-third-tablet is-8-mobile is-offset-2-mobile" >
           {/* {comments.map(singleComment => {
@@ -69,6 +82,11 @@ class Images extends React.Component{
           })} */}
           <figure className="image is-1by1">
             <img src={url} alt={title} />
+            <div onClick={() => {
+              this.likeImage(id)
+            }}>
+              <img className="likes-img" src="https://res.cloudinary.com/djq7pruxd/image/upload/v1596516120/iconfinder_166_Heart_Love_Like_Twitter_4541850_an3vro.png" />
+            </div>
           </figure>
         </div>
         {showBigPortfolio &&    
@@ -79,9 +97,14 @@ class Images extends React.Component{
           {/* side of big image container */}
           <div className='big-image-side'>
             <div className="profile-header-index">        
-              <Link to={`/profile/${displayUserId}`}>
-                <img className='profile-image-index' src={displayProfileUrl}/></Link>
-              <Link to={`/profile/${displayUserId}`}>{displayUsername}</Link>
+              <Link to={`/profile/${displayUserId}`} className="portfolio-header-part">
+                <img className='profile-image-index' src={displayProfileUrl}/>{displayUsername}</Link>
+                <div className="portfolio-header-part">
+              <img className="small-like-img" onClick={() => {
+              this.likeImage(displayPortfolioId, displayLikes)
+            }}  src="https://res.cloudinary.com/djq7pruxd/image/upload/v1596516120/iconfinder_166_Heart_Love_Like_Twitter_4541850_an3vro.png" />
+            {displayLikes.length}
+            </div>
             </div>
             <hr className="hr-comment"/>
             <div className="description-and-comments">

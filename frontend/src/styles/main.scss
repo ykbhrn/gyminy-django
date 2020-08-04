@@ -670,11 +670,12 @@ a{
 
 .index-portfolio{
   cursor: pointer;
+  position: relative;
 }
 
 .profile-header-index{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 10px 0 -12px 0 ;
   align-items: center;
   text-align: left;
@@ -922,4 +923,24 @@ hr{
 
 .no-messages{
   margin-top: 100px;
+}
+
+//likes
+.likes-img{
+  position:absolute!important;
+  left: 50%!important;
+  top: 50%!important;
+  width: 30px!important;
+  height: 30px!important;
+}
+
+.small-like-img{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.portfolio-header-part{
+  display: flex;
+  align-items: center;
 }

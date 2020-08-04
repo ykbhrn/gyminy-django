@@ -60,3 +60,19 @@ class ImageDetailView(APIView):
     self.is_image_owner(image_to_delete, request.user)
     image_to_delete.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
+
+# class Like(APIView):
+
+#   permission_classes = (IsAuthenticatedOrReadOnly,)
+
+#   def get_image(self, pk):
+#     try:
+#       return Image.objects.get(pk=pk)
+#     except Image.DoesNotExist:
+#       raise NotFound()
+
+#   def put(self, request, pk):
+#     image_to_update = self.get_image(pk)
+#     image_to_update.likes = image_to_update.likes + 1
+#     image_to_update.save(update_fields=["likes"])
+#     return Response(print('sugi pula'), status=status.HTTP_202_ACCEPTED)

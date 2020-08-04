@@ -1,6 +1,7 @@
 from rest_framework import serializers 
 from django.contrib.auth import get_user_model
 from comments.serializers import PopulatedCommentSerializer
+from likes.serializers import PopulatedLikeSerializer
 
 
 from .models import Article
@@ -21,3 +22,4 @@ class ArticleSerializer(serializers.ModelSerializer):
 class PopulatedArticleSerializer(ArticleSerializer):
   owner = UserSerializer()
   comments = PopulatedCommentSerializer(many=True)
+  likes = PopulatedLikeSerializer(many=True)

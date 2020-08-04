@@ -21,6 +21,7 @@ class IndexPortfolio extends React.Component {
     displayDescription: '',
     displayComments: [],
     displayPortfolioId: '',
+    displayLikes: '',
     newComments: false
   }
 
@@ -55,11 +56,11 @@ class IndexPortfolio extends React.Component {
     }
   }
 
-  handleBigPortfolio = (url, title, userId, username, profileUrl, displayDescription, comments, id ) => {
+  handleBigPortfolio = (url, title, userId, username, profileUrl, displayDescription, comments, id, likes ) => {
     this.setState({ showBigPortfolio: true, displayPhotoUrl: url,
       displayTitle: title, displayUserId: userId,
       displayUsername: username, displayProfileUrl: profileUrl,
-      displayDescription: displayDescription, displayComments: comments, displayPortfolioId: id
+      displayDescription: displayDescription, displayComments: comments, displayPortfolioId: id, displayLikes: likes
     })
   }
 
@@ -119,6 +120,7 @@ class IndexPortfolio extends React.Component {
                     username={image.owner.username}
                     userId={image.owner.id}
                     comments={image.comments}
+                    likes={image.likes}
                     profileUrl={image.owner.profile_image}
                     handleBigPortfolio={this.handleBigPortfolio}
                     showBigPortfolio={this.state.showBigPortfolio}
@@ -130,6 +132,7 @@ class IndexPortfolio extends React.Component {
                     displayProfileUrl={this.state.displayProfileUrl}
                     displayDescription={this.state.displayDescription}
                     displayPortfolioId={this.state.displayPortfolioId}
+                    displayLikes={this.state.displayLikes}
                     displayComments={this.state.displayComments.slice(0).reverse().map( comment => (
                       <div className='single-comment' key={comment.id}> 
                         <div className="profile-header-comment">        

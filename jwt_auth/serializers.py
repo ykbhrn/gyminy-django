@@ -12,6 +12,7 @@ from articles.serializers import ArticleSerializer, PopulatedArticleSerializer
 from trainings.serializers import PopulatedTrainingSerializer, TrainingSerializer
 from comments.serializers import CommentSerializer
 from chat.serializers import PopulatedChatSerializer
+from likes.serializers import PopulatedLikeSerializer
 
 # from followers.serializers import PopulatedFollowerSerializer
 
@@ -55,6 +56,7 @@ class UserSerializer(serializers.ModelSerializer):
 class PopulatedUserSerializer(UserSerializer):
   user_type = UserTypeSerializer()
   sports = SportSerializer(many=True)
+  likes = PopulatedLikeSerializer(many=True)
   # followers = SmallUserSerializer(many=True)
   # following = SmallUserSerializer(many=True)
 

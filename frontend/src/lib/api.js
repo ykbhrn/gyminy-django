@@ -90,3 +90,7 @@ export const getChat = (id) => {
 export const getAllUsers = () => {
   return axios.get('/api/users/')
 }
+
+export const giveLike = (formData) => {
+  return axios.post(`/api/likes/`, formData,  withHeaders())
+}
