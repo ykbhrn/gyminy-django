@@ -19,19 +19,20 @@ class SportSelect extends React.Component {
 
 
   render() {
-    if (!this.state.sports) return null
+    // if (!this.state.sports) return null
     return (
       <div className="select is-multiple">
         <select multiple size="3"
           onClick={this.props.handleSelect}
           name="sports"
         >
-          {this.state.sports.map(sport => ( 
-            <option 
-              key={sport.id}
-              value={sport.id}
-            >{sport.name}</option>
-          ))}
+          <option>Aerobic</option>
+          <option>Yoga</option>
+          <option>Strength and Conditioning</option>
+          <option>Combat Sports</option>
+          <option>Powerlifting</option>
+          <option>Weightlifting</option>
+          <option>Breathing Exercises</option>
         </select>
       </div>
     )
