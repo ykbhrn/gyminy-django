@@ -4,7 +4,8 @@ import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 
 const uploadUrl = process.env.REACT_APP_CLOUDINARY_URL
-const uploadPreset = process.env.REACT_APP_CLOUDINARY_BUCKET
+const uploadPresetImage = '893724'
+const uploadPresetVideo = 'evgroxyf'
 
 class AddPortfolio extends React.Component {
   state = {
@@ -30,19 +31,19 @@ class AddPortfolio extends React.Component {
     this.setState({ formData, error: '' })
   }
 
-handleSubmit = async event => {
-  event.preventDefault()
-  try {
-    if (this.props.match.params.portfolio === 'images') {
-      await addImages(this.state.formData) 
-    } else if (this.props.match.params.portfolio === 'videos') {
-      await addVideos(this.state.formData) 
+  handleSubmit = async event => {
+    event.preventDefault()
+    try {
+      if (this.props.match.params.portfolio === 'images') {
+        await addImages(this.state.formData)
+      } else if (this.props.match.params.portfolio === 'videos') {
+        await addVideos(this.state.formData)
+      }
+      this.setState({ redirect: true })
+    } catch (err) {
+      this.setState({ error: 'Invalid Credentials' })
     }
-    this.setState({ redirect: true })    
-  } catch (err) {
-    this.setState({ error: 'Invalid Credentials' })
   }
-}
 
 
   renderRedirect = () => {
@@ -70,9 +71,15 @@ handleSubmit = async event => {
       this.setState({ isLoading: true })
       const data = new FormData()
       data.append('file', event.target.files[0])
-      data.append('upload_preset', uploadPreset)
+
+      if (this.portfolioName === 'images') {
+        data.append('upload_preset', uploadPresetImage)
+      } else if (this.portfolioName === 'videos') {
+        data.append('upload_preset', uploadPresetVideo)
+      }
+
       const res = await axios.post(uploadUrl, data)
-      console.log(res.data)
+
       this.setState({ isLoading: false })
       this.setUrl(res.data.url)
     } catch (err) {
@@ -99,16 +106,16 @@ handleSubmit = async event => {
                 type="file"
                 onChange={this.handleUpload}
               />
-              {this.isImage() && 
-              <>
-                {formData.url ? <img src={formData.url} alt="User's Upload" /> : ''}
-              </>
+              {this.isImage() &&
+                <>
+                  {formData.url ? <img src={formData.url} alt="User's Upload" /> : ''}
+                </>
               }
 
-              {!this.isImage() && 
-              <>
-                {formData.url ? <video src={formData.url} alt="User's Upload" controls/> : ''}
-              </>
+              {!this.isImage() &&
+                <>
+                  {formData.url ? <video src={formData.url} alt="User's Upload" controls /> : ''}
+                </>
               }
             </div>
             {error.url && <small className="help is-danger">{error.url}</small>}
@@ -128,11 +135,11 @@ handleSubmit = async event => {
               <img src='https://res.cloudinary.com/djq7pruxd/image/upload/v1592484110/loading_ngtamg.svg' className='loading-image' />
             </>
             }
-            {!this.state.isLoading && 
-                  <button type="submit" className='button'> Post It 
-                  </button>
-            }    
-  
+            {!this.state.isLoading &&
+              <button type="submit" className='button'> Post It
+              </button>
+            }
+
           </form>
         </div>
       </section >

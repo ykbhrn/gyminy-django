@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 const uploadUrl = process.env.REACT_APP_CLOUDINARY_URL
-const uploadPreset = process.env.REACT_APP_CLOUDINARY_BUCKET
+const uploadPreset = '893724'
 
 class AddArticle extends React.Component {
   state = {

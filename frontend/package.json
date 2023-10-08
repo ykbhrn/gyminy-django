@@ -8,13 +8,13 @@
     "dotenv": "^8.2.0",
     "eslint-plugin-react": "^7.20.0",
     "http-proxy-middleware": "^1.0.4",
-    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-notify-toast": "^0.5.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-show-more-text": "^1.4.2"
+    "react-show-more-text": "^1.4.2",
+    "sass": "^1.69.0"
   },
   "scripts": {
     "start": "react-scripts start",
